@@ -1,6 +1,7 @@
 package com.thoughtworks.capability.demospringioccontainer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ public class GreetingController {
 
     @Autowired
     public GreetingController(GreetingService greetingService) {
+        System.out.println("++++++++ GreetingController is instantiating...");
         this.greetingService = greetingService;
     }
 
